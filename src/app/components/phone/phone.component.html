@@ -1,0 +1,56 @@
+
+
+<div class="conatiner">
+  <div class="card">
+    <h2>Smartphone {{name}}</h2>
+    <p>Model {{model}}</p>
+  </div>
+
+  <div class="card">
+    <h3>Characteristics</h3>
+    <ul>
+      <li>Memory: <b>{{memory}}</b></li>
+      <li>Phone's color: {{colors.phone}}</li>
+      <li>OS: <b>{{colors.os}}</b></li>
+    </ul>
+
+    <div class="card">
+      <h4>Edit object</h4>
+      <button class="btn btn-success" (click)="showEdit()" >Edit object</button>
+      <form *ngIf=isEdit >
+        <div class="form-group edit-obj">
+          <input type="text" placeholder="name" [(ngModel)]="name" name="name" >
+          <br>
+          <input type="text" placeholder="memory" [(ngModel)]="name" name="memory">
+          <br>
+          <input type="text" placeholder="model" [(ngModel)]="name" name="model" >
+          <br>
+          <input type="text" placeholder="color" [(ngModel)]="colors.phone" name="color" >
+          <br>
+          <input type="text" placeholder="os" [(ngModel)]="colors.os" name="os" >
+        </div>
+      </form>
+    </div>
+
+    <h2>Additional options</h2>
+
+    <form (submit) = addOpt(option) >
+      <div class="form-group">
+        <label for="option">Add additional option:</label>
+        <input type="text" placeholder="add options" id="option" #option>
+        <br>
+        <button type="submit" class="btn btn-primary" >Add</button>
+      </div>
+    </form>
+
+
+    <ul>
+      <li *ngFor="let item of options; let i = index" >{{i}}{{item}}
+        <button class="btn btn-danger" (click) = deleteOpt(item) >X</button>
+      </li>
+    </ul>
+  </div>
+  <button class="btn btn-primary" (click) = "phoneSelect('iphone')" >Iphone</button>
+  <button class="btn btn-danger" (click) = "phoneSelect('samsung')" >Samsung</button>
+  <button class="btn btn-success" (click) = "phoneSelect('xiaomi')" >Xiaomi</button>
+</div>

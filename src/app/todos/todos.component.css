@@ -1,0 +1,56 @@
+.done {
+  text-decoration: line-through;
+}
+
+ul {
+  width: 350px;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+ul li {
+  display: flex;
+  border: 1px solid gray;
+  padding: 5px;
+  gap: 10px;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.container{
+  margin: 30px auto;
+  max-width: 700px;
+  background-color: rgb(223, 221, 218);
+  border-radius: 2px;
+  padding: 20px;
+}
+
+input {
+  outline: none;
+  border: 2px solid rgb(164, 160, 160);
+  border-radius: 5px;
+  padding: 8px 15px;
+}
+
+.input-block {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  gap: 20px
+}
+
+.add-task {
+  border: none;
+  padding: 8px 25px;
+  background-color: rgb(6, 135, 6);
+  color: white;
+  border-radius: 3px;
+  font-size: 30px;
+}
+
+.input-block input {
+  width: 100%;
+}
